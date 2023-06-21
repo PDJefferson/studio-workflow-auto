@@ -1,0 +1,16 @@
+version: '3.7'
+name: mongo-instance
+
+services:
+  mongo-instance:
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - './db_data:/data/db'
+    networks:
+      - mongo-network
+    
+networks:
+  mongo-network:
